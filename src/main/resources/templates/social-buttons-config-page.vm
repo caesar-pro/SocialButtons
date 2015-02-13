@@ -1,0 +1,100 @@
+## Config page
+#requireResource("com.caesarpro.confluence.SocialButtons:SocialButtons-config-resources")
+<html>
+<head>
+    <title>$i18n.getText("config-page.title")</title>
+    <meta name="decorator" content="atl.admin">
+</head>
+<body>
+
+
+<form action="ConfigSocialButtons.action" method="post" class="aui">
+
+    <h3>General</h3>
+    <fieldset class="group">
+##        <legend><span>Do you want to replace standard Like button with social share buttons?</span></legend>
+        <div class="checkbox">
+            <input class="checkbox" type="checkbox"  name="replaceLike" id="replace-like-btn" #if($action.ReplaceLikeBtn) checked #end>
+            <label for="replace-like-btn">Replace standard Like button</label>
+        </div>
+    </fieldset>
+
+    #set($skin-classic = "")
+    #set($skin-flat = "")
+    #set($skin-birman = "")
+    #if($action.Skin == "classic") #set($skin-classic = "checked='checked'") #end
+    #if($action.Skin == "flat") #set($skin-flat = "checked='checked'") #end
+    #if($action.Skin == "birman") #set($skin-birman = "checked='checked'") #end
+
+    <h3>Button style</h3>
+    <fieldset class="group">
+        <legend><span>Select skin</span></legend>
+        <div class="radio">
+            <input class="radio" type="radio" $skin-classic name="skin" value="classic" id="skin-classic">
+            <label for="skin-classic">Classic</label>
+        </div>
+        <div class="radio">
+            <input class="radio" type="radio" $skin-flat name="skin" value="flat" id="skin-flat">
+            <label for="skin-flat">Flat</label>
+        </div>
+        <div class="radio">
+            <input class="radio" type="radio" $skin-birman name="skin" value="birman" id="skin-birman">
+            <label for="skin-birman">Birman</label>
+        </div>
+    </fieldset>
+
+
+    <h3>Social share button counter</h3>
+    <fieldset class="group">
+        <legend><span>Do you want to show counters?</span></legend>
+        <div class="checkbox">
+            <input class="checkbox" type="checkbox"  name="counters" id="show-counters" #if($action.ShowCounters) checked #end>
+            <label for="show-counters">Show counters</label>
+        </div>
+    </fieldset>
+
+
+    <h3>Sites</h3>
+    <fieldset class="group">
+        <legend><span>Select sites</span></legend>
+        <div class="checkbox">
+            <input class="checkbox site-name" type="checkbox" name="facebook" id="cbfacebook" #if($action.ShowFacebookBtn) checked #end>
+            <label for="cbfacebook">$i18n.getText("social-buttons.vm_facebook.name")</label>
+        </div>
+        <div class="checkbox">
+            <input class="checkbox site-name" type="checkbox" name="twitter" id="cbtwitter" #if($action.ShowTwitterBtn) checked #end>
+            <label for="cbtwitter">$i18n.getText("social-buttons.vm_twitter.name")</label>
+        </div>
+        <div class="checkbox">
+            <input class="checkbox site-name" type="checkbox" name="plusone" id="cbplusone" #if($action.ShowPlusoneBtn) checked #end>
+            <label for="cbplusone">$i18n.getText("social-buttons.vm_plusone.name")</label>
+        </div>
+        <div class="checkbox">
+            <input class="checkbox site-name" type="checkbox" name="mailru" id="cbmailru" #if($action.ShowMailruBtn) checked #end>
+            <label for="cbmailru">$i18n.getText("social-buttons.vm_mailru.name")</label>
+        </div>
+        <div class="checkbox">
+            <input class="checkbox site-name" type="checkbox" name="vkontakte" id="cbvkontakte" #if($action.ShowVkontakteBtn) checked #end>
+            <label for="cbvkontakte">$i18n.getText("social-buttons.vm_vkontakte.name")</label>
+        </div>
+        <div class="checkbox">
+            <input class="checkbox site-name" type="checkbox" name="odnoklassniki" id="cbodnoklassniki" #if($action.ShowOdnoklassnikiBtn) checked #end>
+            <label for="cbodnoklassniki">$i18n.getText("social-buttons.vm_odnoklassniki.name")</label>
+        </div>
+
+        <div class="checkbox">
+            <input class="checkbox site-name" type="checkbox" name="pinterest" id="cbpinterest" #if($action.ShowPinterestBtn) checked #end>
+            <label for="cbpinterest">$i18n.getText("social-buttons.vm_pinterest.name")</label>
+        </div>
+    </fieldset>
+
+</form>
+
+
+<h3>Preview</h3>
+<div id="buttons-preview">
+
+</div>
+
+</body>
+</html>

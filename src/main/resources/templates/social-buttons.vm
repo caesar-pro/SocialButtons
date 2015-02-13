@@ -1,0 +1,38 @@
+#if($theme == "classic")
+<link rel="stylesheet" type="text/css"
+      href="$req.contextPath/download/resources/com.caesarpro.confluence.SocialButtons/social-likes_classic.css"/>
+#end
+#if($theme == "flat")
+<link rel="stylesheet" type="text/css"
+      href="$req.contextPath/download/resources/com.caesarpro.confluence.SocialButtons/social-likes_flat.css"/>
+#end
+#if($theme == "birman")
+<link rel="stylesheet" type="text/css"
+      href="$req.contextPath/download/resources/com.caesarpro.confluence.SocialButtons/social-likes_birman.css"/>
+#end
+
+<div class="social-likes" #if(!$showCounters) data-counters="no" #end>
+
+    #if($showFaceBookBtn)
+        <div class="facebook" title="$i18n.getText("social-buttons.vm_facebook.title")">$i18n.getText("social-buttons.vm_facebook.name")</div>
+    #end
+    #if($showTwitterBtn)
+        <div class="twitter" title="$i18n.getText("social-buttons.vm_twitter.title")">$i18n.getText("social-buttons.vm_twitter.name")</div>
+    #end
+    #if($showPlusoneBtn)
+        <div class="plusone" title="$i18n.getText("social-buttons.vm_plusone.title")">$i18n.getText("social-buttons.vm_plusone.name")</div>
+    #end
+    #if($showMailruBtn)
+        <div class="mailru" title="$i18n.getText("social-buttons.vm_mailru.title")">$i18n.getText("social-buttons.vm_mailru.name")</div>
+    #end
+    #if($showVkontakteBtn)
+        <div class="vkontakte" title="$i18n.getText("social-buttons.vm_vkontakte.title")">$i18n.getText("social-buttons.vm_vkontakte.name")</div>
+    #end
+    #if($showOdnoklassnikiBtn)
+        <div class="odnoklassniki" title="$i18n.getText("social-buttons.vm_odnoklassniki.title")">$i18n.getText("social-buttons.vm_odnoklassniki.name")</div>
+    #end
+    #if($showPinterestBtn)
+        <div class="pinterest" title="$i18n.getText("social-buttons.vm_pinterest.title")">$i18n.getText("social-buttons.vm_pinterest.name")</div>
+    #end
+
+</div>

@@ -1,0 +1,69 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- resources -->
+    <resource type="i18n" name="i18n" location="SocialButtons"/> <!-- i18n resource -->
+    <resource type="download" name="images/" location="/images"/>
+
+    <resource type="download" name="social-likes_classic.css" location="css/social-likes_classic.css"/>
+    <resource type="download" name="social-likes_flat.css" location="css/social-likes_flat.css"/>
+    <resource type="download" name="social-likes_birman.css" location="css/social-likes_birman.css"/>
+
+    <web-resource key="SocialButtons-global-resources" name="SocialButtons Web Resources">
+        <resource type="download" name="SocialButtons.css" location="css/SocialButtons.css"/>
+
+        <resource type="download" name="social-likes.min.js" location="js/social-likes.min.js"/>
+        <resource type="download" name="SocialButtons.js" location="js/SocialButtons.js"/>
+
+        <context>page</context>
+    </web-resource>
+
+    <web-resource key="SocialButtons-config-resources" name="SocialButtons Web Resources">
+        <resource type="download" name="SocialButtons.css" location="css/SocialButtons.css"/>
+
+        <resource type="download" name="social-likes.min.js" location="js/social-likes.min.js"/>
+        <resource type="download" name="social-buttons-config.js" location="js/social-buttons-config.js"/>
+    </web-resource>
+
+
+    <!-- xwork -->
+    <xwork key="actions" name="XWork Actions">
+        <package name="socialButtons" extends="default" namespace="/admin/socialbuttons">
+            <default-interceptor-ref name="defaultStack"/>
+
+            <action name="ConfigSocialButtons" class="com.caesarpro.confluence.actions.ConfigSocialButtonsAction">
+                <result name="success" type="velocity">/templates/social-buttons-config-page.vm</result>
+            </action>
+        </package>
+    </xwork>
+
+
+    <!--  web-item -->
+    <web-item key="socialbuttons-link" name="SocialButtons configuration page" section="system.admin/administration" weight="18">
+        <label key="socialbuttons-link-web-item-label"/>
+        <link>/admin/socialbuttons/ConfigSocialButtons.action</link>
+        <condition class="com.atlassian.confluence.plugin.descriptor.web.conditions.ConfluenceAdministratorCondition"/>
+        <description>SocialButtons configuration page</description>
+    </web-item>
+
+
+    <!-- rest -->
+    <rest key="social-buttons-rest-api" path="/socialbuttons" version="1.0">
+        <description>Provides SocialButtons rest services</description>
+    </rest>
+
+
+    <!-- import from the product container -->
+    <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties"/>
+
+    <component key="BandanaService" name="BandanaService" class="com.caesarpro.confluence.util.BandanaServiceImpl">
+        <interface>com.caesarpro.confluence.util.BandanaService</interface>
+    </component>
+
+</atlassian-plugin>
