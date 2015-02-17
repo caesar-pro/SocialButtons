@@ -1,3 +1,6 @@
+#*
+ * @author Caesar pro
+*#
 #if($theme == "classic")
 <link rel="stylesheet" type="text/css"
       href="$req.contextPath/download/resources/com.caesarpro.confluence.SocialButtons/social-likes_classic.css"/>
@@ -11,7 +14,7 @@
       href="$req.contextPath/download/resources/com.caesarpro.confluence.SocialButtons/social-likes_birman.css"/>
 #end
 
-<div class="social-likes" #if(!$showCounters) data-counters="no" #end>
+<div id="social-likes-panel" class="social-likes" #if(!$showCounters) data-counters="no" #end>
 
     #if($showFaceBookBtn)
         <div class="facebook" title="$i18n.getText("social-buttons.vm_facebook.title")">$i18n.getText("social-buttons.vm_facebook.name")</div>

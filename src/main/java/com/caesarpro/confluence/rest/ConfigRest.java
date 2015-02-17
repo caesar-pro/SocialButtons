@@ -21,8 +21,8 @@ import java.util.Map;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
 
-/*
- *  Caesar pro
+/**
+ * @author Caesar pro
  */
 @Path("/config")
 public class ConfigRest {

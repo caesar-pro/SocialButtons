@@ -4,12 +4,7 @@ import com.atlassian.bandana.BandanaContext;
 import com.atlassian.bandana.BandanaManager;
 
 /**
- * Created with IntelliJ IDEA.
- * User: anpi0413
- * Date: 13.02.15
- * Time: 18:47
- * Project: ScrollToTop
- * To change this template use File | Settings | File Templates.
+ * @author Caesar pro
  */
 public class BandanaServiceImpl implements BandanaService {
     private final BandanaManager bandanaManager;

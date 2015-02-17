@@ -5,8 +5,8 @@ import com.atlassian.confluence.core.ConfluenceActionSupport;
 import com.caesarpro.confluence.util.BandanaData;
 import com.caesarpro.confluence.util.BandanaService;
 
-/*
- *  Caesar pro
+/**
+ * @author Caesar pro
  */
 public class ConfigSocialButtonsAction extends ConfluenceActionSupport {
     private final static BandanaContext CONTEXT = BandanaData.bandanaContext;

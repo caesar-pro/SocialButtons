@@ -1,4 +1,7 @@
-## Config page
+#*
+ * Config page
+ * @author Caesar pro
+*#
 #requireResource("com.caesarpro.confluence.SocialButtons:SocialButtons-config-resources")
 <html>
 <head>
@@ -95,6 +98,7 @@
 <div id="buttons-preview">
 
 </div>
+
 
 </body>
 </html>

@@ -1,5 +1,5 @@
-/*
-
+/**
+ * @author Caesar pro
  */
 AJS.toInit(function ($) {
     AJS.$(document).ready(function () {

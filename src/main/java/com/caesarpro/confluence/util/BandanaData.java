@@ -3,8 +3,8 @@ package com.caesarpro.confluence.util;
 import com.atlassian.bandana.BandanaContext;
 import com.atlassian.confluence.setup.bandana.ConfluenceBandanaContext;
 
-/*
- *  Caesar pro
+/**
+ * @author Caesar pro
  */
 public class BandanaData {
     public static final BandanaContext bandanaContext = new ConfluenceBandanaContext("SocialButtons");

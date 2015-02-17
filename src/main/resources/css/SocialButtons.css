@@ -1,4 +1,11 @@
+/**
+ * @author Caesar pro
+ */
 #buttons-preview {
     border: 1px solid #ccc;
     padding: 10px;
+}
+
+#social-likes-panel {
+    margin-top: 15px;
 }
