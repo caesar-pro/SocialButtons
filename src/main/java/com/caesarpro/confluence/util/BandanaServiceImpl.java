@@ -9,6 +9,9 @@ import com.atlassian.bandana.BandanaManager;
 public class BandanaServiceImpl implements BandanaService {
     private final BandanaManager bandanaManager;
 
+    /*
+
+     */
     public BandanaServiceImpl(BandanaManager bandanaManager) {
         this.bandanaManager = bandanaManager;
     }

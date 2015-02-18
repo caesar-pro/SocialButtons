@@ -9,13 +9,17 @@ AJS.toInit(function ($) {
 
             if (data["replaceLikeBtn"]) { // replace Like button
                 $("#likes-section").html(data["html"]);
-                $(".social-likes").socialLikes();
+                socialLike();
             } else { // show above Like button
                 $("#main-content").append(data["html"]);
-                $(".social-likes").socialLikes();
+                socialLike();
             }
         });
 
     });
 });
+
+function socialLike() {
+    $(".social-likes").socialLikes();
+}
 
